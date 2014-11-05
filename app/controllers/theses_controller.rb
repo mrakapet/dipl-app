@@ -69,6 +69,6 @@ class ThesesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def thesis_params
-      params.require(:thesis).permit(:name, :abstract, :language, :defended)
+      params.require(:thesis).permit(:name, :abstract, :language, :defended, :faculty_id)
     end
 end

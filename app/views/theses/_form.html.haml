@@ -16,6 +16,9 @@
     = f.label :language
     = f.text_field :language
   .field
+    = f.label :faculty
+    = f.select :faculty, faculties
+  .field
     = f.label :defended
     = f.date_select :defended
   .actions
