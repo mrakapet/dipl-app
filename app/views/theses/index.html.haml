@@ -3,6 +3,7 @@
 %table
   %tr
     %th Name
+    %th Author
     %th Abstract
     %th Language
     %th Defended
@@ -13,6 +14,9 @@
   - @theses.each do |thesis|
     %tr
       %td= thesis.name
+      %td
+        = thesis.author.firstname
+        = thesis.author.surname
       %td= thesis.abstract
       %td= thesis.language
       %td= thesis.defended

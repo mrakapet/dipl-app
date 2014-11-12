@@ -10,6 +10,9 @@
     = f.label :name
     = f.text_field :name
   .field
+    = f.label :author_id
+    = f.select :author_id, Author.all.inject({}) { | b, a | b[a.firstname + ' ' + a.surname] = a.id; b }
+  .field
     = f.label :abstract
     = f.text_area :abstract
   .field
