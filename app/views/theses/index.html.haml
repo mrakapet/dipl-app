@@ -1,24 +1,26 @@
 %h1 Listing theses
 
-%table.table.table-striped
+%table.table.table-striped.table-hover
   %tr
+    %th #
     %th Name
     %th Faculty
     %th Language
     %th Defended
-    %th
-    %th
-    %th
+    %th Actions
 
+  - i = 1
   - @theses.each do |thesis|
     %tr
-      %td= thesis.name
+      %td= i
+      %td= link_to thesis.name, thesis
       %td= thesis.faculty ? thesis.faculty.name : ''
       %td= thesis.language
       %td= thesis.defended
-      %td= link_to 'Show', thesis
-      %td= link_to 'Edit', edit_thesis_path(thesis)
-      %td= link_to 'Destroy', thesis, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td
+        = link_to '', edit_thesis_path(thesis), class: 'glyphicon glyphicon-pencil', title: 'Edit'
+        = link_to '', thesis, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'glyphicon glyphicon-remove', title: 'Destroy'
 
+    - i += 1
 %br
 = link_to 'New Thesis', new_thesis_path, class:'btn btn-primary'

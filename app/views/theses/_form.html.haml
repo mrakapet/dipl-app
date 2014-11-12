@@ -8,37 +8,26 @@
 
   .field
     = f.label :name
-    = f.text_field :name
-  .field
-    = f.fields_for :author do |fa|
-      .field
-        = fa.label :firstname
-        = fa.text_field :firstname
-      .field
-        = fa.label :surname
-        = fa.text_field :surname
+    = f.text_field :name, class: 'form-control'
   .field
     = f.label :abstract
-    = f.text_area :abstract
+    = f.text_area :abstract, class: 'form-control', rows: '5'
   .field
     = f.label :language
-    = f.text_field :language
+    = f.text_field :language, class: 'form-control'
   .field
     = f.label :faculty
-    = f.select :faculty, faculties
+    = f.select :faculty, faculties, class: 'form-control'
   .field
     = f.fields_for :author do |a|
       .field
         = a.label :firstname
-        = a.text_field :firstname
+        = a.text_field :firstname, class: 'form-control'
       .field
         = a.label :surname
-        = a.text_field :surname
+        = a.text_field :surname, class: 'form-control'
   .field
     = f.label :defended
     = f.date_select :defended
-  .field
-    = f.label :faculty
-    = f.select :faculty_id, faculties
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: 'btn btn-default'

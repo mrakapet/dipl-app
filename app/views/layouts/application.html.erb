@@ -9,11 +9,13 @@
 <body>
 <div class="container">
 <%- unless user_signed_in? %>
-	<%= link_to 'Sign in', new_user_session_path, class: 'btn' %>
-	<%= link_to 'Sign up', new_user_registration_path, class: 'btn' %>
+	<%= link_to 'Sign in', new_user_session_path, class: 'btn pull-right' %>
+	<%= link_to 'Sign up', new_user_registration_path, class: 'btn pull-right' %>
 <%- else -%>
-	<%= link_to 'Sign out', destroy_user_session_path, method: 'delete', class: 'btn' %>
-	<%= current_user.email %>
+	<%= link_to 'Sign out', destroy_user_session_path, method: 'delete', class: 'btn pull-right' %>
+	<span class="pull-right">
+		<%= current_user.email %>
+	</span>
 <%- end %>
 	<%= yield %>
 </div>
