@@ -3,7 +3,6 @@
 %table
   %tr
     %th Name
-    %th String
     %th
     %th
     %th
@@ -11,7 +10,6 @@
   - @faculties.each do |faculty|
     %tr
       %td= faculty.name
-      %td= faculty.string
       %td= link_to 'Show', faculty
       %td= link_to 'Edit', edit_faculty_path(faculty)
       %td= link_to 'Destroy', faculty, :method => :delete, :data => { :confirm => 'Are you sure?' }

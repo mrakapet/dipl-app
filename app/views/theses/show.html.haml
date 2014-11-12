@@ -4,6 +4,9 @@
   %b Name:
   = @thesis.name
 %p
+  %b Author:
+  = @thesis.author.full_name
+%p
   %b Abstract:
   = @thesis.abstract
 %p
@@ -12,6 +15,9 @@
 %p
   %b Defended:
   = @thesis.defended
+%p
+  %b Faculty:
+  = @thesis.faculty ? @thesis.faculty.name : ''
 
 = link_to 'Edit', edit_thesis_path(@thesis)
 \|

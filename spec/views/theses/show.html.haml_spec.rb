@@ -5,7 +5,8 @@ RSpec.describe "theses/show", :type => :view do
     @thesis = assign(:thesis, Thesis.create!(
       :name => "Name",
       :abstract => "MyText",
-      :language => "Language"
+      :language => "Language",
+      :author => Author.create(:firstname => "First", :surname => "Last")
     ))
   end
 
@@ -14,5 +15,6 @@ RSpec.describe "theses/show", :type => :view do
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/MyText/)
     expect(rendered).to match(/Language/)
+    expect(rendered).to match(/First Last/)
   end
 end

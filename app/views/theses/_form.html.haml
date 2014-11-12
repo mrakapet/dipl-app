@@ -10,6 +10,14 @@
     = f.label :name
     = f.text_field :name
   .field
+    = f.fields_for :author do |fa|
+      .field
+        = fa.label :firstname
+        = fa.text_field :firstname
+      .field
+        = fa.label :surname
+        = fa.text_field :surname
+  .field
     = f.label :abstract
     = f.text_area :abstract
   .field
@@ -29,5 +37,8 @@
   .field
     = f.label :defended
     = f.date_select :defended
+  .field
+    = f.label :faculty
+    = f.select :faculty_id, faculties
   .actions
     = f.submit 'Save'
