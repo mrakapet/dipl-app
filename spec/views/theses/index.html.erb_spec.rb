@@ -11,7 +11,8 @@ RSpec.describe "theses/index", :type => :view do
       Thesis.create!(
         :name => "Name",
         :abstract => "MyText",
-        :language => "Language"
+        :language => "Language",
+        :faculty => Faculty.create!(:name => "Faculty")
       )
     ])
   end
@@ -19,7 +20,7 @@ RSpec.describe "theses/index", :type => :view do
   it "renders a list of theses" do
     render
     assert_select "tr>td", :text => "Name".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
     assert_select "tr>td", :text => "Language".to_s, :count => 2
+    assert_select "tr>td", :text => "Faculty".to_s, :count => 1
   end
 end

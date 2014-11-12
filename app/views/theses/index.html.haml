@@ -13,7 +13,7 @@
   - @theses.each do |thesis|
     %tr
       %td= thesis.name
-      %td= thesis.faculty.name
+      %td= thesis.faculty ? thesis.faculty.name : ''
       %td= thesis.language
       %td= thesis.defended
       %td= link_to 'Show', thesis
