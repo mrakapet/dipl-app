@@ -19,6 +19,14 @@
     = f.label :faculty
     = f.select :faculty, faculties
   .field
+    = f.fields_for :author do |a|
+      .field
+        = a.label :firstname
+        = a.text_field :firstname
+      .field
+        = a.label :surname
+        = a.text_field :surname
+  .field
     = f.label :defended
     = f.date_select :defended
   .actions
