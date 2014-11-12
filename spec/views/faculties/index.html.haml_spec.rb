@@ -7,13 +7,14 @@ RSpec.describe "faculties/index", :type => :view do
         :name => "Name"
       ),
       Faculty.create!(
-        :name => "Name"
+        :name => "Name 2"
       )
     ])
   end
 
   it "renders a list of faculties" do
     render
-    assert_select "tr>td", :text => "Name".to_s, :count => 2
+    assert_select "tr>td", :text => "Name".to_s, :count => 1
+    assert_select "tr>td", :text => "Name 2".to_s, :count => 1
   end
 end
