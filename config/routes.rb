@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :faculties
+
   resources :authors
 
   resources :theses

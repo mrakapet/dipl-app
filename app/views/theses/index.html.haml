@@ -1,10 +1,9 @@
 %h1 Listing theses
 
-%table
+%table.table.table-striped
   %tr
     %th Name
-    %th Author
-    %th Abstract
+    %th Faculty
     %th Language
     %th Defended
     %th
@@ -14,10 +13,7 @@
   - @theses.each do |thesis|
     %tr
       %td= thesis.name
-      %td
-        = thesis.author.firstname
-        = thesis.author.surname
-      %td= thesis.abstract
+      %td= thesis.faculty.name
       %td= thesis.language
       %td= thesis.defended
       %td= link_to 'Show', thesis
@@ -25,5 +21,4 @@
       %td= link_to 'Destroy', thesis, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
-
-= link_to 'New Thesis', new_thesis_path
+= link_to 'New Thesis', new_thesis_path, class:'btn btn-primary'

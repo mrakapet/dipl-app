@@ -10,8 +10,13 @@
     = f.label :name
     = f.text_field :name
   .field
-    = f.label :author_id
-    = f.select :author_id, Author.all.inject({}) { | b, a | b[a.firstname + ' ' + a.surname] = a.id; b }
+    = f.fields_for :author do |fa|
+      .field
+        = fa.label :firstname
+        = fa.text_field :firstname
+      .field
+        = fa.label :surname
+        = fa.text_field :surname
   .field
     = f.label :abstract
     = f.text_area :abstract
@@ -21,5 +26,8 @@
   .field
     = f.label :defended
     = f.date_select :defended
+  .field
+    = f.label :faculty
+    = f.select :faculty_id, faculties
   .actions
     = f.submit 'Save'
