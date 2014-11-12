@@ -17,7 +17,7 @@
   = @thesis.defended
 %p
   %b Faculty:
-  = @thesis.faculty.name
+  = @thesis.faculty ? @thesis.faculty.name : ''
 
 = link_to 'Edit', edit_thesis_path(@thesis)
 \|
